@@ -1,0 +1,73 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "electrical-fault-detection-and-classification"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Nathaniel Corey", email = "ndc26@duke.edu" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://github.com/Nathaniel Corey/electrical-fault-detection-and-classification#readme"
+Issues = "https://github.com/Nathaniel Corey/electrical-fault-detection-and-classification/issues"
+Source = "https://github.com/Nathaniel Corey/electrical-fault-detection-and-classification"
+
+[tool.hatch.version]
+path = "src/electrical_fault_detection_and_classification/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/electrical_fault_detection_and_classification tests}"
+
+[tool.coverage.run]
+source_pkgs = ["electrical_fault_detection_and_classification", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/electrical_fault_detection_and_classification/__about__.py",
+]
+
+[tool.coverage.paths]
+electrical_fault_detection_and_classification = ["src/electrical_fault_detection_and_classification", "*/electrical-fault-detection-and-classification/src/electrical_fault_detection_and_classification"]
+tests = ["tests", "*/electrical-fault-detection-and-classification/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
+
+
+[tool.hatch.envs.default.scripts]
+# Installs ipykernel and registers the kernel for this env (user-level kernelspec)
+jupyter-setup = [
+  "pip install --upgrade pip setuptools wheel",
+  "pip install --upgrade jupyter ipykernel",
+  "python -m ipykernel install --user --name=efdc-default --display-name='EFDC (hatch: default)'"
+]
+
+# Unregister the kernel (optional cleanup)
+jupyter-remove = "jupyter kernelspec uninstall efdc-default --user"
