@@ -24,7 +24,11 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = []
+dependencies = [
+  "numpy",
+  "pandas",
+  "scikit-learn"
+]
 
 [project.urls]
 Documentation = "https://github.com/Nathaniel Corey/electrical-fault-detection-and-classification#readme"
