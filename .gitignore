@@ -1,0 +1,63 @@
+
+# ==========================================================
+# Python Development Environment
+# ==========================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+develop-eggs/
+*.egg-info/
+.installed.cfg
+MANIFEST
+
+# Environment files
+venv/
+env/
+.env
+.venv
+
+# ==========================================================
+# Editors and OS Files
+# ==========================================================
+
+# macOS Finder files
+.DS_Store
+
+# Virtualenv/Pipenv
+# Use '*' to avoid ignoring venv/ in the same directory
+# if project is placed inside another venv folder
+*venv/
+*env/
+
+# Jupyter Notebook/IPython
+.ipynb_checkpoints
+
+# Spyder/Scientific Python
+.spyproject
+
+# Temporary files (e.g., used by editors)
+*~
+
+# Backup files
+#*.bak
+
+# ==========================================================
+# Machine Learning & Data Files (User Requested)
+# ==========================================================
+
+# HDF5 model files (user requested)
+*.h5
+
+# Large, generated data files
+data/
+output/
