@@ -31,12 +31,12 @@ def build_improved_rf():
     Improved Random Forest: more trees and mild complexity control.
     """
     return RandomForestClassifier(
-        # n_estimators=500,       # more trees for stability
-        # max_depth=None,
-        # min_samples_leaf=2,
-        # max_features='sqrt',    # common setting for RF
-        # random_state=42,
-        # n_jobs=-1
+        n_estimators=500,       # more trees for stability
+        max_depth=None,
+        min_samples_leaf=2,
+        max_features='sqrt',    # common setting for RF
+        random_state=42,
+        n_jobs=-1
     )
 
 # -------------------------
